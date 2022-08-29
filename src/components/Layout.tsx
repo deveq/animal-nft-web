@@ -20,8 +20,13 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
           </Button>
         </Link>
         <Link to="my-animal">
-          <Button size="sm" colorScheme="blue">
+          <Button size="sm" colorScheme="red">
             My Animal
+          </Button>
+        </Link>
+        <Link to="sale-animal">
+          <Button size="sm" colorScheme="green">
+            Sale Animal
           </Button>
         </Link>
       </Flex>

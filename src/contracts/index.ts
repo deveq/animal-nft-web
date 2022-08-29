@@ -2,9 +2,9 @@ import { AbiItem } from "web3-utils";
 import Web3 from "web3";
 
 export const mintAnimalTokenAddress: string =
-  "0x84C7c3C269badF8A5E2ff93c40B2401E30E95aC3";
+  "0xfe6Fa79e200a93f044A31fBE3B1EFC98fC0407f3";
 export const saleAnimalTokenAddress: string =
-  "0xDEE7D438d7cAC2bcFD5bcccB141De0af0F6178db";
+  "0x6Ff6bCF784EB2eEd3dbBafe1d3f6502C53019236";
 
 const mintAnimalTokenAbi: AbiItem[] = [
   {
@@ -295,6 +295,25 @@ const mintAnimalTokenAbi: AbiItem[] = [
     inputs: [
       {
         internalType: "uint256",
+        name: "_animalTokenId",
+        type: "uint256",
+      },
+    ],
+    name: "getAnimalType",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
         name: "tokenId",
         type: "uint256",
       },
@@ -576,6 +595,36 @@ const saleAnimalTokenAbi: AbiItem[] = [
         internalType: "uint256",
         name: "",
         type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getOnSaleAnimalTokens",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "animalTokenId",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "animalType",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "animalPrice",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct MintAnimalToken.AnimalTokenData[]",
+        name: "",
+        type: "tuple[]",
       },
     ],
     stateMutability: "view",
